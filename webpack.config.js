@@ -1,84 +1,84 @@
+var path = require('path')
+var webpack = require('webpack')
 
-
-// nodejs 中的path模块
-var path = require('path');
 module.exports = {
-    entry: {
-        // index:'./src/js/index.js',
-        main:'./src/js/main.js'
-      },
-      output: {
-        filename: 'main.js'
-      },
-    
-
-    resolve:{
-        extensions: ['', '.js', '.vue'],
-        alias:{
-           // components:path.join(__dirname,"./components")
+  entry: './src/main.js',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/dist/',
+    filename: 'build.js'
+  },
+  // node:{
+  //   fs:'empty'
+  // },
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          'vue-style-loader',
+          'css-loader'
+        ],
+      },      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+          }
+          // other vue-loader options go here
         }
+      },
+      {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]?[hash]'
+        }
+      }
+    ]
+  },
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js'
     },
-    module: {
-           rule: [
-            {
-                test: /\.vue$/,
-                use:[{
-                loader: 'vue-loader',
-                options: {
-                    loaders: {
-                        js: 'babel-loader?{"presets":["es2015"],"plugins": ["transform-object-rest-spread"]}',
-                        css: 'vue-style-loader!css-loader'
-                    }
-                }
-            }],
-                exclude: /node_modules/
-            },
-            // {
-            //     test: /\.jsx?$/,
-            //     exclude: /node_modules/,
-            //     loader: 'babel-loader'
-            //   },
-            {
-                test: /\.js$/,
-                
-                use: [
-                    {
-                        loader:'babel-loader',
-                        options:{
-                            presets: ['es2015'],
-                            plugins: ['transform-runtime']
+    extensions: ['*', '.js', '.vue', '.json']
+  },
+  // resolve:{
+  //   alias:{vue:"vue/dist/vue.js"}
+  // },
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true,
+    overlay: true
+  },
+  performance: {
+    hints: false
+  },
+  devtool: '#eval-source-map'
+}
 
-                        }
-                    },
-
-                    //  {
-                    //     loader:'eslint-loader',
-                    //      options:
-                    //     {
-                    //          configFile: './.eslintrc.js'
-                    //      }
-                    
-                    // }
-                ],   
-                exclude: /node_modules/,                   
-              },
-
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            },
-          
-        ]}
-
-  
-
-    // eslint:{
-    //     configFile: './.eslintrc.js'
-    //   },
-
-    // babel:{
-      
-    
-    // }
-
-};
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  // http://vue-loader.vuejs.org/en/workflow/production.html
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      compress: {
+        warnings: false
+      }
+    }),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    })
+  ])
+}
