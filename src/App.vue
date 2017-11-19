@@ -45,10 +45,7 @@ export default {
 }
 
 
-h1, h2 {
-  font-weight: normal;
-  font-size:11rem;
-}
+
 
 ul {
   list-style-type: none;
@@ -57,7 +54,7 @@ ul {
 
 li {
   display: inline-block;
-  margin: 0 10px;
+
 }
 
 a {

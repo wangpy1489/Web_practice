@@ -61,6 +61,8 @@ export default {
             this.initData(null);
         },
         methods: {
+           
+
             initData: function(cur) {
                 var leftcount=0; //存放剩余数量
                 var date;
