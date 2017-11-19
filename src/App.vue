@@ -1,23 +1,24 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <secondcomponent></secondcomponent>
-    <firstcomponent></firstcomponent>
-    <h2>Ecosystem</h2>
+    <!-- <img src="./assets/logo.png">
+    <h1>{{ msg }}</h1> -->
+    <calendar></calendar>
+    <!-- <firstcomponent></firstcomponent> -->
+    <!-- <h2>Ecosystem</h2>
     <ul>
       <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
- 
+      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li> -->
+    <!-- </ul>
+  -->
   </div>
   
 </template>
 
 <script>
 import firstcomponent from './firstcomponent.vue'
+import calendar from './calendar.vue'
 export default {
   name: 'app',
   data () {
@@ -25,7 +26,7 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  components:{firstcomponent }
+  components:{firstcomponent ,calendar}
 }
 </script>
 
