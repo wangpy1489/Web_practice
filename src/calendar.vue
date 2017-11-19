@@ -142,24 +142,21 @@ export default {
 </script>
 
 <style>
-        *{
+        /* *{
             box-sizing: border-box;
-        }
+        } */
         ul {
             list-style-type: none;
         }
-        body {
-            font-family: Verdana, sans-serif;
-            background: #E8F0F3;
-        }
+       
         #calendar{
-            width:90%;
+            width:70%;
             margin: 0 auto;
-            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.1), 0 1px 5px 0 rgba(0,0,0,0.12);
+            box-shadow: 0 13px 3px 0 rgba(0,0,0,0.14), 0 3px 13px -2px rgba(0,0,0,0.1), 0 3px 15px 0 rgba(0,0,0,0.12);
         }
         .month {
             width: 100%;
-            background: #00B8EC;
+            background: #6495ED;
         }
         .month ul {
             margin: 0 auto;
@@ -199,7 +196,7 @@ export default {
         .weekdays {
             margin: 0 auto;
             padding: 10px 0;
-            background-color: #00B8EC;
+            background-color: #7B68EE;
             display: flex;
             flex-wrap: wrap;
             color: #FFFFFF;
@@ -212,6 +209,7 @@ export default {
         }
         .weekdays .weekend{
             color:red;
+            font-weight:bold;
         }
         .days {
             padding: 0;

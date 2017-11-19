@@ -2,7 +2,9 @@
   <div id="app">
     <!-- <img src="./assets/logo.png">
     <h1>{{ msg }}</h1> -->
+    <top></top>
     <calendar></calendar>
+    <Log></Log>
     <!-- <firstcomponent></firstcomponent> -->
     <!-- <h2>Ecosystem</h2>
     <ul>
@@ -19,6 +21,8 @@
 <script>
 import firstcomponent from './firstcomponent.vue'
 import calendar from './calendar.vue'
+import top from './top.vue'
+import Log from './calen_log.vue'
 export default {
   name: 'app',
   data () {
@@ -26,7 +30,7 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  components:{firstcomponent ,calendar}
+  components:{firstcomponent ,calendar,top,Log}
 }
 </script>
 
@@ -37,11 +41,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0;
 }
+
 
 h1, h2 {
   font-weight: normal;
+  font-size:11rem;
 }
 
 ul {
