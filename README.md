@@ -1,6 +1,7 @@
 # web_practice
 
-> A Vue.js project
+一个由VUE实现的简单的日历页面，附有日程计划功能。
+>现因组件间通信问题无法将日程附加到日期上，仍需改进。
 
 ## Build Setup
 
@@ -15,4 +16,3 @@ npm run dev
 npm run build
 ```
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
