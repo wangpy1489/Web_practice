@@ -28,12 +28,12 @@ import * as uiv from 'uiv'
  var m_data={
       msg:"My Plans",
       plans:[],
-      showNavbar:true,
+      
       event:"",
       time:"",
     };
 export default {
-   
+   el: '#Log',
     data () {
       return m_data
   },
