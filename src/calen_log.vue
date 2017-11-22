@@ -33,7 +33,7 @@ import * as uiv from 'uiv'
       time:"",
     };
 export default {
-   el: '#Log',
+  //  el: '#Log',
     data () {
       return m_data
   },
