@@ -206,7 +206,7 @@ export default {
         }
         .weekdays li {
             display: inline-block;
-            width: 10.2%;
+            width: 11.2%;
             text-align: center;
         }
         .weekdays .weekend{
@@ -224,7 +224,7 @@ export default {
         .days li {
             list-style-type: none;
             display: inline-block;
-            width: 11.2%;
+            width: 14.2%;
             text-align: center;
             padding-bottom: 15px;
             padding-top: 15px;

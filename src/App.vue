@@ -4,7 +4,7 @@
     <h1>{{ msg }}</h1> -->
     <top></top>
     <calendar></calendar>
-    <Log></Log>
+    <c_log></c_log>
     <!-- <firstcomponent></firstcomponent> -->
     <!-- <h2>Ecosystem</h2>
     <ul>
@@ -19,10 +19,10 @@
 </template>
 
 <script>
-import firstcomponent from './firstcomponent.vue'
+
 import calendar from './calendar.vue'
 import top from './top.vue'
-import Log from './calen_log.vue'
+import c_log from './calen_log.vue'
 export default {
   name: 'app',
   data () {
@@ -30,7 +30,7 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  components:{firstcomponent ,calendar,top,Log}
+  components:{calendar,top,c_log}
 }
 </script>
 
